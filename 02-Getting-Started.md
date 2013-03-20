@@ -32,6 +32,20 @@ and then add the proper location to your path (this example for Bash or similar 
 
 Adding this line to your `.profile` login script will ensure that your local copy of `coffee` (and other executables you install locally the same way) will always be available to you for development.
 
+#### Coffee-Script scripts
+
+On Unix-compatible operating systems (Linux, MacOSX, ..) you can take advantage of the so-called 'she-bang' feature to turn Coffee-Script files (including your ZappaJS scripts) into programs.
+To this end, add the following line at the top of your `.coffee` file:
+
+    #!/usr/bin/env coffee
+    
+This line assumes that the program `/usr/bin/env` is available on your platform, and that the `coffee` executable is available in the `$PATH` variable at the time of execution. This should be the case if you followed the instructions in the previous section.
+To turn you `.coffee` script into a program, finally do:
+
+    chmod +x file.coffee
+    
+Obviously you'll need to replace `file.coffee` with the actual name of your program file.
+
 ### ZappaJS
 
 Install ZappaJS with
