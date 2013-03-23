@@ -15,4 +15,4 @@ book.md:
 	rm -f rev-$< qr-$(basename $<).png
 
 clean:
-	rm -f book.md book.pdf
+	rm -f book.md book.pdf rev-book.md
