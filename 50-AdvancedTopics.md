@@ -16,7 +16,7 @@ You can use Zappa (actually, Express) and mikeal's `request` module to easily im
           headers: @request.headers
           jar: false
           followRedirect: false
-          timeout: 1000
+          timeout: 30000
         @request.pipe proxy
         proxy.pipe @response
         return
