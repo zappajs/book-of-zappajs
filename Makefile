@@ -1,7 +1,7 @@
 all: book.pdf
 
 book.md:
-	cat [0-9]*.md > book.md
+	(for f in [0-9]*.md; do cat "$$f"; echo; done) > book.md
 
 %.pdf: %.md
 	# Add revision qrcode
