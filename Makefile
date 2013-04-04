@@ -10,7 +10,7 @@ book.md:
 	qrencode -o qr-$(basename $<).png "`git rev-list HEAD | head -1`"
 	echo "Document Revision: `git rev-list HEAD -- $< | head -1` ![revision](qr-$(basename $<).png)" >> rev-$<
 	# Build document
-	pandoc --latex-engine xelatex -V mainfont='Gillius ADF' -V monofont='Inconsolata' -o $@ --toc -s -S --normalize rev-$<
+	pandoc --latex-engine xelatex -V mainfont='Gillius ADF' -V monofont='Inconsolata' -o $@ --toc --chapters -s -S --normalize rev-$<
 	# Clean-up
 	rm -f rev-$< qr-$(basename $<).png
 
